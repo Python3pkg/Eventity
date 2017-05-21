@@ -5,7 +5,7 @@ class Component(object):
         self.dict["name"] = c_name
 
         self.dict["data"] = c_data
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             self.dict["data"][key] = value
 
     def to_dict(self):

@@ -14,11 +14,11 @@ class TestSystem(System):
 
 
 add_time1 = time.time()
-for x in xrange(100000):
+for x in range(100000):
     j = ecs.new()
     ecs.add(j, comp)
 add_time2 = time.time()
-print "Making 100000 components: " + str(add_time2 - add_time1) + " seconds"
+print("Making 100000 components: " + str(add_time2 - add_time1) + " seconds")
 
 search_time1 = time.time()
 
@@ -35,7 +35,7 @@ for e in ecs.list(["comp"]):
     test_list.append(e)
 
 search_time2 = time.time()
-print "Searching all those 100000 components 4 times: " + str(search_time2 - search_time1) + " seconds"
+print("Searching all those 100000 components 4 times: " + str(search_time2 - search_time1) + " seconds")
 
 system_time1 = time.time()
 ecs.register(TestSystem)
@@ -44,4 +44,4 @@ ecs.send("make_hello", new_string="Trudy")
 ecs.send("make_hello", new_string="Oliver")
 ecs.send("make_hello", new_string="Phil")
 system_time2 = time.time()
-print "Registering a system and making lots of expensive calls: " + str(system_time2 - system_time1) + " seconds"
+print("Registering a system and making lots of expensive calls: " + str(system_time2 - system_time1) + " seconds")

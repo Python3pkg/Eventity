@@ -52,7 +52,7 @@ class ECSystem(object):
         temp_dict = component.dict
         temp = deepcopy(temp_dict)
 
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             temp["data"][key] = value
 
 
@@ -115,6 +115,6 @@ class ECSystem(object):
         Broadcasts an event to all systems.
         """
         temp_data = {}
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             temp_data[key] = value
         self.evt.sendMessage(trigger, data=temp_data)

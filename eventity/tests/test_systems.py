@@ -8,7 +8,7 @@ class TestSystem(System):
 
     def do_it(self, data):
         for entity in self.ecs.list(["position"]):
-            print entity
+            print(entity)
             entity.position["x"] += 10
 
 class TestSystems(TestCase):
@@ -23,5 +23,5 @@ class TestSystems(TestCase):
 
         ecs.send("do_it")
         ecs.send("do_it")
-        print ecs("Jarl").position
+        print(ecs("Jarl").position)
         self.assertTrue(ecs("Jarl").position["x"] == 20)
